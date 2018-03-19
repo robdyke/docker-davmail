@@ -12,13 +12,13 @@ RUN apk --update --no-cache add tar wget && \
 
 VOLUME        /etc/davmail
 
-EXPOSE        1080
-EXPOSE        1143
-EXPOSE        1389
-EXPOSE        1110
-EXPOSE        1025
+#EXPOSE        1080
+#EXPOSE        1143
+#EXPOSE        1389
+#EXPOSE        1110
+EXPOSE        2525
 WORKDIR       /usr/local/davmail
 
 USER davmail
-
+COPY davmail.properties /etc/davmail/davmail.properties
 CMD ["/usr/local/davmail/davmail.sh", "/etc/davmail/davmail.properties"]
